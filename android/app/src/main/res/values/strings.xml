@@ -9,4 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="zalo_flutter_app_id">3057146058762559064</string>
+    <string name="zalo_flutter_app_id_protocol">zalo-3057146058762559064</string>
 </resources>

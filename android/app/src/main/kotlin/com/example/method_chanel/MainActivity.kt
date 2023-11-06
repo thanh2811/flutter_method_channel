@@ -1,14 +1,16 @@
 package com.example.method_chanel
 
-import android.content.Intent
 import android.util.Log
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import android.content.Intent // <-- Add this line
+import com.zing.zalo.zalosdk.oauth.ZaloSDK // <-- Add this line
 
 class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        
 
         MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,
@@ -28,6 +30,11 @@ class MainActivity : FlutterActivity() {
                }
            }
         }
+    }
+
+     override fun onActivityResult(requestCode:Int, resultCode:Int, data: Intent) {
+        super.onActivityResult(requestCode, resultCode, data)
+        ZaloSDK.Instance.onActivityResult(this, requestCode, resultCode, data) // <-- Add this line
     }
 
     companion object {
